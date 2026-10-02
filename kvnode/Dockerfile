@@ -6,7 +6,7 @@ WORKDIR /src
 # Copy the POM first so Maven's dependency resolution layer is cached
 # independently of your source changes.
 COPY pom.xml .
-RUN mvn -B -q -o dependency:resolve-plugins 2>/dev/null || mvn -B -q dependency:resolve-plugins
+RUN mvn -B -q dependency:resolve-plugins
 
 COPY src ./src
 RUN mvn -B -q package
