@@ -1,0 +1,25 @@
+* podman compose build network test
+
+This command fails for podman compose with both podman-compose and docker-compose backends.
+#+begin_src bash
+  podman compose build --no-cache
+#+end_src
+
+This build works fine for regular docker compose components
+#+begin_src bash
+  docker compose build --no-cache
+#+end_src
+
+commands for dumping platform context
+#+begin_src bash
+  podman --version && podman-compose --version
+#+end_src
+
+#+begin_example
+podman version 5.4.2
+podman-compose version 1.3.0
+podman version 5.4.2
+DEBIAN_VERSION_FULL=13.7
+#+end_example
+
+oogah boogah
